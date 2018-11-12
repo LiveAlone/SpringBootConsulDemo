@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    consul:
+      config:
+        enabled: true
+        prefix: config
+        default-context: applicaton
+        watch:
+          delay: 1000
+          enabled: true
+        format: yaml

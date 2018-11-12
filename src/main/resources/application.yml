@@ -1,0 +1,18 @@
+logging:
+  level:
+    root: INFO
+
+spring:
+  application:
+    name: consul-demo1
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        health-check-interval: 10s
+        health-check-path: /acturator/health
+        tags: foo=bar, baz
+        instance-id: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+
+username: localusername
